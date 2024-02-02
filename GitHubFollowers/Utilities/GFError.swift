@@ -1,8 +1,8 @@
 //
-//  ErrorMessage.swift
+//  GFError.swift
 //  GitHubFollowers
 //
-//  Created by Emir Öztürk on 23.01.2024.
+//  Created by Emir Öztürk on 3.02.2024.
 //
 
 import Foundation
