@@ -67,6 +67,9 @@ class FollowerListVC: UIViewController {
         collectionView.backgroundColor = .systemBackground
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
     }
+    //yorum
+    //yorum2
+    //yorum3
 
 
     func getFollowers(username: String, page: Int) {
