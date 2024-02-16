@@ -23,6 +23,8 @@
 		CB9465012B5C9BBC00EE51BA /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9465002B5C9BBC00EE51BA /* GFTextField.swift */; };
 		CB9465032B5CAD3200EE51BA /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9465022B5CAD3200EE51BA /* FollowerListVC.swift */; };
 		CB9BD4352B710ED20025053B /* GFItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BD4342B710ED20025053B /* GFItemInfoView.swift */; };
+		CBA5ED152B7D8E48004F6CB7 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5ED142B7D8E48004F6CB7 /* PersistenceManager.swift */; };
+		CBA5ED172B7ECB02004F6CB7 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5ED162B7ECB02004F6CB7 /* FavoriteCell.swift */; };
 		CBAD2BE22B72AB1E00D815EA /* GFItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAD2BE12B72AB1E00D815EA /* GFItemInfoVC.swift */; };
 		CBAD2BE42B72B15A00D815EA /* GFRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAD2BE32B72B15A00D815EA /* GFRepoItemVC.swift */; };
 		CBAD2BE62B72B3DE00D815EA /* GFFollowerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAD2BE52B72B3DE00D815EA /* GFFollowerItemVC.swift */; };
@@ -59,6 +61,8 @@
 		CB9465002B5C9BBC00EE51BA /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
 		CB9465022B5CAD3200EE51BA /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
 		CB9BD4342B710ED20025053B /* GFItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoView.swift; sourceTree = "<group>"; };
+		CBA5ED142B7D8E48004F6CB7 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		CBA5ED162B7ECB02004F6CB7 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		CBAD2BE12B72AB1E00D815EA /* GFItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoVC.swift; sourceTree = "<group>"; };
 		CBAD2BE32B72B15A00D815EA /* GFRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRepoItemVC.swift; sourceTree = "<group>"; };
 		CBAD2BE52B72B3DE00D815EA /* GFFollowerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFollowerItemVC.swift; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				CBD117CC2B5DD92A004357CC /* NetworkManager.swift */,
+				CBA5ED142B7D8E48004F6CB7 /* PersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				CBE5A9852B5F25FF00E3439D /* FollowerCell.swift */,
+				CBA5ED162B7ECB02004F6CB7 /* FavoriteCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -346,6 +352,7 @@
 				CB34E7902B6DB58900AE6EE6 /* GFError.swift in Sources */,
 				CBAD2BE62B72B3DE00D815EA /* GFFollowerItemVC.swift in Sources */,
 				CB9BD4352B710ED20025053B /* GFItemInfoView.swift in Sources */,
+				CBA5ED172B7ECB02004F6CB7 /* FavoriteCell.swift in Sources */,
 				CBD117BE2B5D890B004357CC /* GFAlertVC.swift in Sources */,
 				CBE5A9862B5F25FF00E3439D /* FollowerCell.swift in Sources */,
 				CB02339A2B6F0687007EDDD0 /* GFUserInfoHeaderVC.swift in Sources */,
@@ -353,6 +360,7 @@
 				CBD117C82B5DCE24004357CC /* Follower.swift in Sources */,
 				CBD117BA2B5D86AF004357CC /* GFTitleLabel.swift in Sources */,
 				CBAD2BE92B72D77A00D815EA /* Date+Ext.swift in Sources */,
+				CBA5ED152B7D8E48004F6CB7 /* PersistenceManager.swift in Sources */,
 				CB02339C2B6F06FA007EDDD0 /* GFSecondaryTitleLabel.swift in Sources */,
 				CBC090AE2B669120002468DC /* GFEmptyStateView.swift in Sources */,
 				CBD117CD2B5DD92A004357CC /* NetworkManager.swift in Sources */,
