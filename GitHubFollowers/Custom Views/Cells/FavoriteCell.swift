@@ -13,7 +13,6 @@ class FavoriteCell: UITableViewCell {
     let avatarImageView = GFAvatarImageView(frame: .zero)
     let usernameLabel = GFTitleLabel(textAlignment: .left, fontSize: 26)
 
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configure()
@@ -24,14 +23,13 @@ class FavoriteCell: UITableViewCell {
     }
     
     func set(favorite: Follower) {
+        avatarImageView.downloadImage(fromUrl: favorite.avatarUrl)
         usernameLabel.text = favorite.login
-        avatarImageView.downloadImage(from: favorite.avatarUrl)
     }
     
     private func configure() {
-        addSubview(avatarImageView)
-        addSubview(usernameLabel)
-        
+        addSubviews(avatarImageView, usernameLabel)
+
         accessoryType = .disclosureIndicator
         let padding: CGFloat = 12
         

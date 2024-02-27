@@ -18,6 +18,7 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        view.addSubviews(logoImageView, usernameTextField, callToActionButton)
         configureLogoImageView()
         configureTextField()
         configureCallToActionButton()
@@ -26,30 +27,34 @@ class SearchVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        usernameTextField.text = ""
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     func createDismissKeyboardTapGesture() {
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
     
     @objc func pushFollowerListVC() {
         
         guard isUsernameEntered else {
+            // command + control + space bar = characters ( emojies, symbols etc.)
             presentGFAlertOnMainThread(title: "Empty Username", message: "Please enter a username. We need to know who to look for 😀", buttonTitle: "Ok")
             return
         }
-        let followerListVC = FollowerListVC()
-        followerListVC.username = usernameTextField.text
-        followerListVC.title = usernameTextField.text
+        
+        usernameTextField.resignFirstResponder()
+        
+        let followerListVC = FollowerListVC(username: usernameTextField.text!)
+        
         navigationController?.pushViewController(followerListVC, animated: true)
     }
     
     func configureLogoImageView() {
-        view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "gh-logo")
+        logoImageView.image = Images.ghLogo
+        
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -59,7 +64,6 @@ class SearchVC: UIViewController {
     }
     
     func configureTextField() {
-        view.addSubview(usernameTextField)
         usernameTextField.delegate = self
         
         NSLayoutConstraint.activate([
@@ -71,7 +75,6 @@ class SearchVC: UIViewController {
     }
     
     func configureCallToActionButton() {
-        view.addSubview(callToActionButton)
         callToActionButton.addTarget(self, action: #selector(pushFollowerListVC), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
@@ -84,49 +87,9 @@ class SearchVC: UIViewController {
 }
 
 extension SearchVC: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         pushFollowerListVC()
         return true
     }
 }
-
-
-
-
-
-
-
-/*#if DEBUG
-
-@available(iOS 13.0, *)
-struct Home_Preview: PreviewProvider {
-    
-    
-    static var previews: some View {
-        HomeContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct HomeContainerView: UIViewControllerRepresentable {
-        
-        func makeUIViewController(context: Context) -> SearchVC {
-            return SearchVC()
-        }
-        
-        func updateUIViewController(_ uiViewController: SearchVC,
-                                    context: UIViewControllerRepresentableContext<Home_Preview.HomeContainerView>) {
-        /*
-          VIPER, MVMM gibi yapılarda farklı sayfalarda yapılan değişiklerde
-          sayfayı kaydettiğinizde değişikliklerin görünmesini isterseniz bu metodu kullanarak
-          Örn: viewDidLoad loadData() burada çağırdığınızda değişiklikleri Preview yeniden Run
-          etmeden kolay ve hızlı bir şekilde görebileceksiniz.
-         */
-        }
-        
-        typealias UIViewControllerType = SearchVC
-    
-    }
-    
-}
-
-#endif*/
-
